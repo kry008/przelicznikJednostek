@@ -15,7 +15,10 @@ var prefixLong = [
     {"name": "mil", "value": "0.0000254"},
 ]
 var prefixTime = [
-    {"name": "sekunda", "value": "1"},
+    {
+        "name": "sekunda",
+        "value": "1"
+    },
     {"name": "minuta", "value": "60"},
     {"name": "godzina", "value": "3600"},
     {"name": "dzień", "value": "86400"},
@@ -110,8 +113,8 @@ class Prefixes extends React.Component {
         }); 
         console.log(this.state.result + ' ' + this.state.selectedUnit);
         
-        basic = this.state.result * this.props.givenValue
-        console.log(basic);
+        basic = Number(this.state.result) * Number(this.props.givenValue)
+        console.log(Number(this.state.result) * Number(this.props.givenValue));
         //save to state usedPrefixes
         this.setState({
             basic: basic,
@@ -123,6 +126,9 @@ class Prefixes extends React.Component {
             basic: basic
         });
         this.props.stateUp();
+        this.setState({
+            result: basic
+        })
     }
     render() {
         var selectedType = this.props.selectedType;

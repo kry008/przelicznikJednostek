@@ -1,6 +1,19 @@
 import React from "react";
 
 class Table extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedType: '',
+            selectedUnit: '',
+            selectedValue: '',
+            result: '',
+            basic: 0,
+            usedPrefixes: [],
+        };
+    }
+
+
     render() {
         return (
             <div className="table">
