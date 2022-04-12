@@ -1,31 +1,108 @@
 var prefixLong = [
-    {"name": "kilometr", "value": "0.001"},
-    {"name": "metr", "value": "1"},
-    {"name": "centymetr", "value": "100"},
-    {"name": "milimetr", "value": "1000"},
-    {"name": "dekametr", "value": "10"},
+    {
+        "name": "kilometr", 
+        "value": 0.001
+    },
+    {
+        "name": "metr",
+        "value": 1
+    },
+    {
+        "name": "centymetr", 
+        "value": 100
+    },
+    {
+        "name": "milimetr", 
+        "value": 1000
+    },
+    {
+        "name": "dekametr", 
+        "value": 10
+    },
 ]
 var prefixTime = [
     {
         "name": "sekunda",
         "value": "1"
     },
-    {"name": "minuta", "value": 1/60},
-    {"name": "godzina", "value": 1/3600},
+    {
+        "name": "minuta",
+        "value": 1/60
+    },
+    {
+        "name": "godzina",
+        "value": 1/3600
+    },
+    {
+        "name": "dzień",
+        "value": 1/86400
+    },
 ]
 var prefixWeight = [
-    {"name": "kilogram", "value": 1},
-    {"name": "gram", "value": 1000},
-    {"name": "miligram", "value": 1000000},
+    {
+        "name": "kilogram",
+        "value": 1
+    },
+    {
+        "name": "gram",
+        "value": 1000
+    },
+    {
+        "name": "miligram",
+        "value": 1000000
+    },
+    {
+        "name": "dekagram",
+        "value": 10
+    },
+    {
+        "name": "tona",
+        "value": 0.001
+    },
 ]
 var prefixMemory = [
-    {"name": "bajt", "value": 1},
-    {"name": "kilobajt", "value": 1/1000},
-    {"name": "megabajt", "value": 1/1000000},
+    {
+        "name": "bit", 
+        "value": 1
+    },
+    {
+        "name": "kilobit", 
+        "value": 1/1000
+    },
+    {
+        "name": "megabit", 
+        "value": 1/1000000
+    },
+    {
+        "name": "bajt",
+        "value": 1/8
+    },
+    {
+        "name": "kilobajt",
+        "value": 1/(8 * 1024)
+    },
+    {
+        "name": "megabajt",
+        "value": 1/(8 * 1024 * 1024)
+    },
+    {
+        "name": "gigabit",
+        "value": 1/1000000000
+    },
+    {
+        "name": "gigabajt",
+        "value": 1/(8 * 1024 * 1024 * 1024)
+    },
 ]
 var prefixSpace = [
-    {"name": "m3", "value": 1},
-    {"name": "cm3", "value": 1000000},
+    {
+        "name": "m3", 
+        "value": 1
+    },
+    {
+        "name": "cm3", 
+        "value": 1000000
+    },
 ]
 
 export { prefixLong, prefixTime, prefixWeight, prefixMemory, prefixSpace };

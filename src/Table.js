@@ -49,7 +49,7 @@ class Table extends React.Component{
                     used = true;
                 }
             }
-            rows.push(<tr key={i}><td>{name}</td><td>{result}</td><td>{used}</td></tr>);
+            rows.push(<tr key={i}><td>{name}</td><td>{result}</td></tr>);
         }
         return rows;
     }
