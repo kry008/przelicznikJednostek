@@ -81,57 +81,6 @@ class Prefixes extends React.Component {
             usedPrefixes: usedPrefixes,
         });
         this.props.stateUp(selectedType, result, basic, usedPrefixes);
-        /*event.preventDefault();
-        var selectedType = this.props.selectedType;
-        var result = '';
-        var name = '';
-        var prefixes = [];
-        var basic = 0
-        console.log(this.state.selectedUnit)
-        if (selectedType === 'long') {
-            prefixes = prefixLong;
-        }
-        if (selectedType === 'time') {
-            prefixes = prefixTime;
-        }
-        if (selectedType === 'weight') {
-            prefixes = prefixWeight;
-        }
-        if (selectedType === 'memory') {
-            prefixes = prefixMemory;
-        }
-        if (selectedType === 'temp') {
-            prefixes = prefixSpace;
-        }
-        for (var i = 0; i < prefixes.length; i++) {
-            if (prefixes[i].name === this.state.selectedUnit) {
-                result = prefixes[i].value;
-                name = prefixes[i].name;
-            }
-        }
-        this.setState({
-            result: result,
-            selectedUnit: name,
-        }); 
-        console.log(this.state.result + ' ' + this.state.selectedUnit);
-        
-        basic = Number(this.state.result) * Number(this.props.givenValue)
-        console.log(Number(this.state.result) * Number(this.props.givenValue));
-        //save to state usedPrefixes
-        this.setState({
-            basic: basic,
-            usedPrefixes: prefixes,
-        });
-        console.log(this.state.usedPrefixes);
-
-        this.setState({
-            basic: basic
-        });
-        this.props.stateUp();
-        this.setState({
-            result: basic
-        })
-        this.props.stateUp()*/
     }
     render() {
         var selectedType = this.props.selectedType;
