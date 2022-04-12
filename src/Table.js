@@ -1,33 +1,5 @@
 import React from "react";
-var prefixLong = [
-    {"name": "kilometr", "value": "1000"},
-    {"name": "metr", "value": "1"},
-    {"name": "centymetr", "value": "0.01"},
-    {"name": "milimetr", "value": "0.001"},
-    {"name": "dekametr", "value": "0.1"},
-]
-var prefixTime = [
-    {
-        "name": "sekunda",
-        "value": "1"
-    },
-    {"name": "minuta", "value": "60"},
-    {"name": "godzina", "value": "3600"},
-]
-var prefixWeight = [
-    {"name": "kilogram", "value": "1"},
-    {"name": "gram", "value": "0.001"},
-    {"name": "miligram", "value": "0.000001"},
-]
-var prefixMemory = [
-    {"name": "bajt", "value": "1"},
-    {"name": "kilobajt", "value": "1000"},
-    {"name": "megabajt", "value": "1000000"},
-]
-var prefixSpace = [
-    {"name": "m3", "value": "1"},
-    {"name": "cm3", "value": "0.00001"},
-]
+import { prefixLong, prefixTime, prefixWeight, prefixMemory, prefixSpace } from "./zmienne";
 //<Table selectedType={this.state.selectedType} basic={this.state.basic} basicValue={this.state.result} usedPrefixes={this.state.usedPrefixes}/>
 class Table extends React.Component{
     //make table with prefixes based on given value

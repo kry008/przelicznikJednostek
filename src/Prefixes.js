@@ -1,34 +1,5 @@
 import React from 'react';
-
-var prefixLong = [
-    {"name": "kilometr", "value": "0.001"},
-    {"name": "metr", "value": "1"},
-    {"name": "centymetr", "value": "100"},
-    {"name": "milimetr", "value": "1000"},
-    {"name": "dekametr", "value": "10"},
-]
-var prefixTime = [
-    {
-        "name": "sekunda",
-        "value": "1"
-    },
-    {"name": "minuta", "value": "0.016666666666666"},
-    {"name": "godzina", "value": "3600"},
-]
-var prefixWeight = [
-    {"name": "kilogram", "value": "1"},
-    {"name": "gram", "value": "0.001"},
-    {"name": "miligram", "value": "0.000001"},
-]
-var prefixMemory = [
-    {"name": "bajt", "value": "1"},
-    {"name": "kilobajt", "value": "0.001"},
-    {"name": "megabajt", "value": "0.000001"},
-]
-var prefixSpace = [
-    {"name": "stopień Celsjusza", "value": "1"},
-    {"name": "stopień Fahrenheita", "value": "0.5555555555555556"},
-]
+import { prefixLong, prefixTime, prefixWeight, prefixMemory, prefixSpace } from "./zmienne";
 
 class Prefixes extends React.Component {
     constructor(props) {
