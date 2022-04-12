@@ -22,7 +22,6 @@ class Prefixes extends React.Component {
         console.log(this.state.selectedUnit);
     }
     handleSubmit(event) {
-        //make this function work
         event.preventDefault();
         var selectedType = this.props.selectedType;
         var selectedUnit = this.state.selectedUnit;
@@ -86,7 +85,6 @@ class Prefixes extends React.Component {
         var selectedType = this.props.selectedType;
         var selectedUnit = this.state.selectedUnit;
         var givenValue = this.state.givenValue;
-        var result = this.state.result;
         var prefixes = [];
         if (selectedType === 'long') {
             prefixes = prefixLong;
@@ -100,7 +98,7 @@ class Prefixes extends React.Component {
         if (selectedType === 'memory') {
             prefixes = prefixMemory;
         }
-        if (selectedType === 'temp') {
+        if (selectedType === "space") {
             prefixes = prefixSpace;
         }
 
@@ -115,10 +113,9 @@ class Prefixes extends React.Component {
                             })}
                         </select>
                     </label>
-                    <input type="text" value={givenValue} onChange={(event) => {this.setState({givenValue: event.target.value}); console.log(event.target.value);}} />
+                    <input type="number" value={givenValue} onChange={(event) => {this.setState({givenValue: event.target.value}); console.log(event.target.value);}} />
                     <input type="submit" value="Submit"  />
                 </form>
-                <p>{result}</p>
             </div>
         );
     }

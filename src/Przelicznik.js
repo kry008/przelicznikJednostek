@@ -3,12 +3,7 @@ import TypeField from './TypeField';
 import Prefixes from './Prefixes';
 import Table from './Table';
 
-
-
 class Przelicznik extends React.Component {
-    //make function which will get from TypeField selected type
-    //and save to states
-    //and then render result
     constructor(props) {
         super(props);
         this.state = {
@@ -21,15 +16,12 @@ class Przelicznik extends React.Component {
         };
         this.handleChange = this.handleChange.bind(this);
         this.stateUp = this.stateUp.bind(this);
-        //this.handleSubmit = this.handleSubmit.bind(this);
-                
     }
     handleChange(event) {
         this.setState({
             selectedType: event.target.value,
         });
     }
-    //this.props.stateUp(selectedType, result, basic, usedPrefixes);
     stateUp(selectedType, result, basic, usedPrefixes) {
         this.setState({
             selectedType: selectedType,

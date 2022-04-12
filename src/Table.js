@@ -1,10 +1,6 @@
 import React from "react";
 import { prefixLong, prefixTime, prefixWeight, prefixMemory, prefixSpace } from "./zmienne";
-//<Table selectedType={this.state.selectedType} basic={this.state.basic} basicValue={this.state.result} usedPrefixes={this.state.usedPrefixes}/>
 class Table extends React.Component{
-    //make table with prefixes based on given value
-    //make constructor, render and other methods
-    //save props to state
     constructor(props){
         super(props);
         this.state = {
@@ -13,9 +9,7 @@ class Table extends React.Component{
             basicValue: this.props.basicValue,
             usedPrefixes: this.props.usedPrefixes,
         }
-       // this.makeRows = this.makeRows.bind(this);
     }
-    //use this.props.basicValue to calculate prefixes
     makeRows(){
         var rows = [];
         var basicValue = this.props.basicValue;
@@ -53,11 +47,6 @@ class Table extends React.Component{
         }
         return rows;
     }
-    //you have data from props, make table from it
-    //table haders: Jednostka, Wartość, Przedrostek
-    //table rows: number, values, prefixes
-    //make on <table>
-    //use basic value and prefixes from props
     render(){
        return(
               <table>

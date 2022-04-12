@@ -6,13 +6,7 @@ class TypeField extends React.Component {
         this.state = {
             selectedType: '',
         };
-        //this.handleChange = this.handleChange.bind(this);
     }
-    /*handleChange(event) {
-        this.setState({
-            selectedType: event.target.value,
-        });
-    }*/
 
     render() {
         return (
