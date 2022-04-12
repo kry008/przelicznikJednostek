@@ -1,63 +1,33 @@
 import React from 'react';
 
 var prefixLong = [
-    {"name": "kilometr", "value": "1000"},
+    {"name": "kilometr", "value": "0.001"},
     {"name": "metr", "value": "1"},
-    {"name": "centymetr", "value": "0.01"},
-    {"name": "milimetr", "value": "0.001"},
-    {"name": "dekametr", "value": "0.1"},
-    {"name": "hektometr", "value": "100"},
-    {"name": "decametr", "value": "10"},
-    {"name": "jard", "value": "0.9144"},
-    {"name": "stopa", "value": "0.3048"},
-    {"name": "fot", "value": "0.0254"},
-    {"name": "cal", "value": "0.01"},
-    {"name": "mil", "value": "0.0000254"},
+    {"name": "centymetr", "value": "100"},
+    {"name": "milimetr", "value": "1000"},
+    {"name": "dekametr", "value": "10"},
 ]
 var prefixTime = [
     {
         "name": "sekunda",
         "value": "1"
     },
-    {"name": "minuta", "value": "60"},
+    {"name": "minuta", "value": "0.016666666666666"},
     {"name": "godzina", "value": "3600"},
-    {"name": "dzień", "value": "86400"},
-    {"name": "tydzień", "value": "604800"},
-    {"name": "miesiąc", "value": "2629800"},
-    {"name": "rok", "value": "31557600"},
 ]
 var prefixWeight = [
-    {"name": "kilogram", "value": "1000"},
-    {"name": "gram", "value": "1"},
-    {"name": "miligram", "value": "0.001"},
-    {"name": "decygram", "value": "0.1"},
-    {"name": "hektogram", "value": "100"},
-    {"name": "dekagram", "value": "10"},
-    {"name": "jednostka", "value": "0.90718474"},
-    {"name": "dziesięciogram", "value": "0.1"},
-    {"name": "sztuka", "value": "0.028349523125"},
-    {"name": "funt", "value": "0.45359237"},
-    {"name": "dram", "value": "0.0017718452"},
-    {"name": "slonce", "value": "0.0005681818"},
+    {"name": "kilogram", "value": "1"},
+    {"name": "gram", "value": "0.001"},
+    {"name": "miligram", "value": "0.000001"},
 ]
 var prefixMemory = [
     {"name": "bajt", "value": "1"},
-    {"name": "kilobajt", "value": "1000"},
-    {"name": "megabajt", "value": "1000000"},
-    {"name": "gigabajt", "value": "1000000000"},
-    {"name": "terabajt", "value": "1000000000000"},
-    {"name": "petabajt", "value": "1000000000000000"},
-    {"name": "exabajt", "value": "1000000000000000000"},
-    {"name": "zettabajt", "value": "1000000000000000000000"},
+    {"name": "kilobajt", "value": "0.001"},
+    {"name": "megabajt", "value": "0.000001"},
 ]
-var prefixTemp = [
+var prefixSpace = [
     {"name": "stopień Celsjusza", "value": "1"},
-    {"name": "stopień Fahrenheita", "value": "1.8"},
-    {"name": "stopień Rankine", "value": "1.8"},
-    {"name": "stopień Delisle", "value": "0.6666666666666666"},
-    {"name": "stopień Newtona", "value": "33.8"},
-    {"name": "stopień Réaumur", "value": "0.8"},
-    {"name": "stopień Rømera", "value": "0.44"},
+    {"name": "stopień Fahrenheita", "value": "0.5555555555555556"},
 ]
 
 class Prefixes extends React.Component {
@@ -78,14 +48,75 @@ class Prefixes extends React.Component {
         this.setState({
             selectedUnit: event.target.value,
         });
+        console.log(this.state.selectedUnit);
     }
     handleSubmit(event) {
+        //make this function work
         event.preventDefault();
+        var selectedType = this.props.selectedType;
+        var selectedUnit = this.state.selectedUnit;
+        var givenValue = this.state.givenValue;
+        var result = 0;
+        var basic = 0;
+        var usedPrefixes = [];
+        if (selectedType === 'long') {
+            for (var i = 0; i < prefixLong.length; i++) {
+                if (selectedUnit === prefixLong[i].name) {
+                    result = givenValue * prefixLong[i].value;
+                    basic = prefixLong[i].value;
+                    usedPrefixes.push(prefixLong[i].name);
+                }
+            }
+        }
+        if (selectedType === 'time') {
+            for (var i = 0; i < prefixTime.length; i++) {
+                if (selectedUnit === prefixTime[i].name) {
+                    result = givenValue * prefixTime[i].value;
+                    basic = prefixTime[i].value;
+                    usedPrefixes.push(prefixTime[i].name);
+                }
+            }
+        }
+        if (selectedType === 'weight') {
+            for (var i = 0; i < prefixWeight.length; i++) {
+                if (selectedUnit === prefixWeight[i].name) {
+                    result = givenValue * prefixWeight[i].value;
+                    basic = prefixWeight[i].value;
+                    usedPrefixes.push(prefixWeight[i].name);
+                }
+            }
+        }
+        if (selectedType === 'memory') {
+            for (var i = 0; i < prefixMemory.length; i++) {
+                if (selectedUnit === prefixMemory[i].name) {
+                    result = givenValue * prefixMemory[i].value;
+                    basic = prefixMemory[i].value;
+                    usedPrefixes.push(prefixMemory[i].name);
+                }
+            }
+        }
+        if (selectedType === 'space') {
+            for (var i = 0; i < prefixSpace.length; i++) {
+                if (selectedUnit === prefixSpace[i].name) {
+                    result = givenValue * prefixSpace[i].value;
+                    basic = prefixSpace[i].value;
+                    usedPrefixes.push(prefixSpace[i].name);
+                }
+            }
+        }
+        this.setState({
+            result: result,
+            basic: basic,
+            usedPrefixes: usedPrefixes,
+        });
+        this.props.stateUp(selectedType, result, basic, usedPrefixes);
+        /*event.preventDefault();
         var selectedType = this.props.selectedType;
         var result = '';
         var name = '';
         var prefixes = [];
         var basic = 0
+        console.log(this.state.selectedUnit)
         if (selectedType === 'long') {
             prefixes = prefixLong;
         }
@@ -99,7 +130,7 @@ class Prefixes extends React.Component {
             prefixes = prefixMemory;
         }
         if (selectedType === 'temp') {
-            prefixes = prefixTemp;
+            prefixes = prefixSpace;
         }
         for (var i = 0; i < prefixes.length; i++) {
             if (prefixes[i].name === this.state.selectedUnit) {
@@ -129,6 +160,7 @@ class Prefixes extends React.Component {
         this.setState({
             result: basic
         })
+        this.props.stateUp()*/
     }
     render() {
         var selectedType = this.props.selectedType;
@@ -149,7 +181,7 @@ class Prefixes extends React.Component {
             prefixes = prefixMemory;
         }
         if (selectedType === 'temp') {
-            prefixes = prefixTemp;
+            prefixes = prefixSpace;
         }
 
         return (
@@ -157,13 +189,14 @@ class Prefixes extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         <select value={selectedUnit} onChange={this.handleChange}>
+                            <option></option>
                             {prefixes.map(function(prefix) {
                                 return <option key={prefix.name} value={prefix.name}>{prefix.name}</option>
                             })}
                         </select>
                     </label>
-                    <input type="text" value={givenValue} onChange={(event) => this.setState({givenValue: event.target.value})} />
-                    <input type="submit" value="Submit" />
+                    <input type="text" value={givenValue} onChange={(event) => {this.setState({givenValue: event.target.value}); console.log(event.target.value);}} />
+                    <input type="submit" value="Submit"  />
                 </form>
                 <p>{result}</p>
             </div>

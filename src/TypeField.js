@@ -22,7 +22,7 @@ class TypeField extends React.Component {
                 <option value="time">Czasu</option>
                 <option value="weight">Wagi</option>
                 <option value="memory">Pamięci</option>
-                <option value="temp">Temperatury</option>
+                <option value="space">Powierzchni</option>
             </select>
         </div>
         );
