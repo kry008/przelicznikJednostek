@@ -33,7 +33,7 @@ class Prefixes extends React.Component {
         if (selectedType === 'long') {
             for (var i = 0; i < prefixLong.length; i++) {
                 if (selectedUnit === prefixLong[i].name) {
-                    result = givenValue * prefixLong[i].value;
+                    result = givenValue / prefixLong[i].value;
                     basic = prefixLong[i].value;
                     usedPrefixes.push(prefixLong[i].name);
                 }
@@ -42,7 +42,7 @@ class Prefixes extends React.Component {
         if (selectedType === 'time') {
             for (var i = 0; i < prefixTime.length; i++) {
                 if (selectedUnit === prefixTime[i].name) {
-                    result = givenValue * prefixTime[i].value;
+                    result = givenValue / prefixTime[i].value;
                     basic = prefixTime[i].value;
                     usedPrefixes.push(prefixTime[i].name);
                 }
@@ -51,7 +51,7 @@ class Prefixes extends React.Component {
         if (selectedType === 'weight') {
             for (var i = 0; i < prefixWeight.length; i++) {
                 if (selectedUnit === prefixWeight[i].name) {
-                    result = givenValue * prefixWeight[i].value;
+                    result = givenValue / prefixWeight[i].value;
                     basic = prefixWeight[i].value;
                     usedPrefixes.push(prefixWeight[i].name);
                 }
@@ -60,7 +60,7 @@ class Prefixes extends React.Component {
         if (selectedType === 'memory') {
             for (var i = 0; i < prefixMemory.length; i++) {
                 if (selectedUnit === prefixMemory[i].name) {
-                    result = givenValue * prefixMemory[i].value;
+                    result = givenValue / prefixMemory[i].value;
                     basic = prefixMemory[i].value;
                     usedPrefixes.push(prefixMemory[i].name);
                 }
@@ -69,7 +69,7 @@ class Prefixes extends React.Component {
         if (selectedType === 'space') {
             for (var i = 0; i < prefixSpace.length; i++) {
                 if (selectedUnit === prefixSpace[i].name) {
-                    result = givenValue * prefixSpace[i].value;
+                    result = givenValue / prefixSpace[i].value;
                     basic = prefixSpace[i].value;
                     usedPrefixes.push(prefixSpace[i].name);
                 }
