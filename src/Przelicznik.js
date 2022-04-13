@@ -20,10 +20,11 @@ class Przelicznik extends React.Component {
     handleChange(event) {
         this.setState({
             selectedType: event.target.value,
-            basic: 0,
             selectedUnit: '',
             selectedValue: '',
             result: '',
+            basic: 0,
+            usedPrefixes: [],
         });
     }
     stateUp(selectedType, result, basic, usedPrefixes) {

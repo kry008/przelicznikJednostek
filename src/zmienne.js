@@ -76,10 +76,6 @@ var prefixWeight = [
         "value": 0.001
     },
     {
-        "name": "tona",
-        "value": 0.001
-    },
-    {
         "name": "funt",
         "value": 2.20462262
     }

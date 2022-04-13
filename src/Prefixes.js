@@ -104,7 +104,7 @@ class Prefixes extends React.Component {
         if (selectedType === "m3") {
             prefixes = prefix3;
         }
-
+        var a = 0;
         return (
             <div className="Prefixes">
                 <form onSubmit={this.handleSubmit}>
@@ -112,7 +112,7 @@ class Prefixes extends React.Component {
                         <select value={selectedUnit} onChange={this.handleChange}>
                             <option></option>
                             {prefixes.map(function(prefix) {
-                                return <option key={prefix.name} value={prefix.name}>{prefix.name}</option>
+                                return <option key={a++} value={prefix.name}>{prefix.name}</option>
                             })}
                         </select>
                     </label>
