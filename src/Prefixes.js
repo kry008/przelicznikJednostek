@@ -1,5 +1,5 @@
 import React from 'react';
-import { prefixLong, prefixTime, prefixWeight, prefixMemory, prefixSpace } from "./zmienne";
+import { prefixLong, prefixTime, prefixWeight, prefixMemory, prefix3 } from "./zmienne";
 
 class Prefixes extends React.Component {
     constructor(props) {
@@ -18,6 +18,8 @@ class Prefixes extends React.Component {
     handleChange(event) {
         this.setState({
             selectedUnit: event.target.value,
+            basic: 0,
+
         });
         console.log(this.state.selectedUnit);
     }
@@ -66,12 +68,12 @@ class Prefixes extends React.Component {
                 }
             }
         }
-        if (selectedType === 'space') {
-            for (i = 0; i < prefixSpace.length; i++) {
-                if (selectedUnit === prefixSpace[i].name) {
-                    result = givenValue / prefixSpace[i].value;
-                    basic = prefixSpace[i].value;
-                    usedPrefixes.push(prefixSpace[i].name);
+        if (selectedType === 'm3') {
+            for (i = 0; i < prefix3.length; i++) {
+                if (selectedUnit === prefix3[i].name) {
+                    result = givenValue / prefix3[i].value;
+                    basic = prefix3[i].value;
+                    usedPrefixes.push(prefix3[i].name);
                 }
             }
         }
@@ -99,8 +101,8 @@ class Prefixes extends React.Component {
         if (selectedType === 'memory') {
             prefixes = prefixMemory;
         }
-        if (selectedType === "space") {
-            prefixes = prefixSpace;
+        if (selectedType === "m3") {
+            prefixes = prefix3;
         }
 
         return (
@@ -114,7 +116,7 @@ class Prefixes extends React.Component {
                             })}
                         </select>
                     </label>
-                    <input type="number" value={givenValue} onChange={(event) => {this.setState({givenValue: event.target.value}); console.log(event.target.value);}} />
+                    <input type="number" min={0} value={givenValue} onChange={(event) => {this.setState({givenValue: event.target.value}); console.log(event.target.value);}} />
                     <input type="submit" value="Wyślij"  />
                 </form>
             </div>

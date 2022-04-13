@@ -1,5 +1,5 @@
 import React from "react";
-import { prefixLong, prefixTime, prefixWeight, prefixMemory, prefixSpace } from "./zmienne";
+import { prefixLong, prefixTime, prefixWeight, prefixMemory, prefix3 } from "./zmienne";
 class Table extends React.Component{
     constructor(props){
         super(props);
@@ -29,8 +29,8 @@ class Table extends React.Component{
         else if(selectedType === "memory"){
             prefixes = prefixMemory;
         }
-        else if(selectedType === "space"){
-            prefixes = prefixSpace;
+        else if(selectedType === "m3"){
+            prefixes = prefix3;
         }
         for(var i = 0; i < prefixes.length; i++){
             var prefix = prefixes[i];

@@ -94,7 +94,7 @@ var prefixMemory = [
         "value": 1/(8 * 1024 * 1024 * 1024)
     },
 ]
-var prefixSpace = [
+var prefix3 = [
     {
         "name": "m3", 
         "value": 1
@@ -103,6 +103,19 @@ var prefixSpace = [
         "name": "cm3", 
         "value": 1000000
     },
+    {
+        "name": "mm3", 
+        "value": 1000000000
+    },
+    {
+        "name": "km3",
+        "value": 1/1000000
+    },
+    {
+        "name": "l",
+        "value": 1/1000
+    },
+
 ]
 
-export { prefixLong, prefixTime, prefixWeight, prefixMemory, prefixSpace };
+export { prefixLong, prefixTime, prefixWeight, prefixMemory, prefix3 };
