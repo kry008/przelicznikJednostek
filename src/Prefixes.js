@@ -29,8 +29,9 @@ class Prefixes extends React.Component {
         var result = 0;
         var basic = 0;
         var usedPrefixes = [];
+        var i = 0;
         if (selectedType === 'long') {
-            for (var i = 0; i < prefixLong.length; i++) {
+            for (i = 0; i < prefixLong.length; i++) {
                 if (selectedUnit === prefixLong[i].name) {
                     result = givenValue / prefixLong[i].value;
                     basic = prefixLong[i].value;
@@ -39,7 +40,7 @@ class Prefixes extends React.Component {
             }
         }
         if (selectedType === 'time') {
-            for (var i = 0; i < prefixTime.length; i++) {
+            for (i = 0; i < prefixTime.length; i++) {
                 if (selectedUnit === prefixTime[i].name) {
                     result = givenValue / prefixTime[i].value;
                     basic = prefixTime[i].value;
@@ -48,7 +49,7 @@ class Prefixes extends React.Component {
             }
         }
         if (selectedType === 'weight') {
-            for (var i = 0; i < prefixWeight.length; i++) {
+            for (i = 0; i < prefixWeight.length; i++) {
                 if (selectedUnit === prefixWeight[i].name) {
                     result = givenValue / prefixWeight[i].value;
                     basic = prefixWeight[i].value;
@@ -57,7 +58,7 @@ class Prefixes extends React.Component {
             }
         }
         if (selectedType === 'memory') {
-            for (var i = 0; i < prefixMemory.length; i++) {
+            for (i = 0; i < prefixMemory.length; i++) {
                 if (selectedUnit === prefixMemory[i].name) {
                     result = givenValue / prefixMemory[i].value;
                     basic = prefixMemory[i].value;
@@ -66,7 +67,7 @@ class Prefixes extends React.Component {
             }
         }
         if (selectedType === 'space') {
-            for (var i = 0; i < prefixSpace.length; i++) {
+            for (i = 0; i < prefixSpace.length; i++) {
                 if (selectedUnit === prefixSpace[i].name) {
                     result = givenValue / prefixSpace[i].value;
                     basic = prefixSpace[i].value;
@@ -114,32 +115,11 @@ class Prefixes extends React.Component {
                         </select>
                     </label>
                     <input type="number" value={givenValue} onChange={(event) => {this.setState({givenValue: event.target.value}); console.log(event.target.value);}} />
-                    <input type="submit" value="Submit"  />
+                    <input type="submit" value="Wyślij"  />
                 </form>
             </div>
         );
     }
 }
 
-/*class Prefixes extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedType: this.props.selectedType
-        };
-    }
-    render() {
-        return (
-            <div className="prefixes">
-                {prefixLong.map(prefix => (
-                    <div className="prefix">
-                        <input type="radio" name="prefix" value={prefix.value} onChange={this.props.handleChange} />
-                        <label>{prefix.name}</label>
-                    </div>
-                ))}
-            </div>
-        );
-    }
-
-}*/
 export default Prefixes;
