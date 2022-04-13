@@ -19,6 +19,14 @@ var prefixLong = [
         "name": "dekametr", 
         "value": 10
     },
+    {
+        "name": "mila morska", 
+        "value": 1/1852
+    },
+    {
+        "name": "mila lądowa", 
+        "value": 1/1609
+    },
 ]
 var prefixTime = [
     {
@@ -36,6 +44,14 @@ var prefixTime = [
     {
         "name": "dzień",
         "value": 1/86400
+    },
+    {
+        "name": "nano sekunda",
+        "value": 1000000000
+    },
+    {
+        "name": "mili sekunda",
+        "value": 1000000
     },
 ]
 var prefixWeight = [
@@ -59,6 +75,14 @@ var prefixWeight = [
         "name": "tona",
         "value": 0.001
     },
+    {
+        "name": "tona",
+        "value": 0.001
+    },
+    {
+        "name": "funt",
+        "value": 2.20462262
+    }
 ]
 var prefixMemory = [
     {

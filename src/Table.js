@@ -9,7 +9,13 @@ class Table extends React.Component{
             basicValue: this.props.basicValue,
             usedPrefixes: this.props.usedPrefixes,
         }
+        this.roundNum = this.roundNum.bind(this);
     }
+    roundNum(liczba) {
+        liczba = liczba * 10000;
+        var wynik = Math.round(liczba)/10000;
+        return wynik;
+        }
     makeRows(){
         var rows = [];
         var basicValue = this.props.basicValue;
@@ -43,7 +49,7 @@ class Table extends React.Component{
                     used = true;
                 }
             }
-            rows.push(<tr key={i}><td>{name}</td><td>{result}</td></tr>);
+            rows.push(<tr key={i}><td>{name}</td><td>{this.roundNum(result)}</td></tr>);
         }
         return rows;
     }
