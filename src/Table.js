@@ -20,7 +20,6 @@ class Table extends React.Component{
         var rows = [];
         var basicValue = this.props.basicValue;
         var usedPrefixes = this.props.usedPrefixes;
-        var basic = this.props.basic;
         var selectedType = this.props.selectedType;
         var prefixes = [];
         if(selectedType === "long"){
